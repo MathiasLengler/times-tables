@@ -1,6 +1,10 @@
 http:// {
 	root * /srv
-	encode gzip
+	encode
+
+	tracing {
+		span file_server
+	}
 
 	header {
 		# cross-origin isolation for SharedArrayBuffer (wasm threads)
